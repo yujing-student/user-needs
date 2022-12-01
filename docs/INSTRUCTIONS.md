@@ -5,19 +5,17 @@
 
 ## Context
 
-Deze leertaak hoort bij sprint # [Sprintnaam]. 
-Dit is een leertaak die je [individueel / in een team] uitvoert.
+Deze leertaak hoort bij sprint 17 Back to Static. 
+Dit is een leertaak die je individueel of in een team uitvoert.
 
-In het college [[collegenaam](link)] wordt behandeld ... 
+In het college _S17W1-01-Sprintplanning Back-to-Static_ wordt de opdracht uitgelegd. In de Workshop _S17W1-03-Static-Site-Generation_ krijg je uitleg over hoe je statische web pagina's kan genereren met SvelteKit.
 
-Bij deze leertaak [hoort de deeltaak / horen de deeltaken]:
-- [[deeltaak](link)]
-- [[deeltaak](link)]
-- [[deeltaak](link)]
+Bij deze leertaak hoort de deeltaak:
+- [Creative coding](https://github.com/fdnd-task/back-to-static-creative-coding)
 
 ## Doel van deze opdracht
 
-Je leert hoe je ... 
+Je leert wat Static Site generation is, wat de voor- en naddelen zijn en hoe je dit kan toepassen. 
 
 ## Werkwijze
 
