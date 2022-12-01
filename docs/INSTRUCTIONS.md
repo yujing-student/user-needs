@@ -1,5 +1,5 @@
 
-# [Sprintnaam] - [Leertaak-Naam]
+# Back to Static - Static Site Generation
 
 [Beschrijving van de deeltaak]
 
@@ -15,7 +15,7 @@ Bij deze leertaak hoort de deeltaak:
 
 ## Doel van deze opdracht
 
-Je leert wat Static Site generation is, wat de voor- en naddelen zijn en hoe je dit kan toepassen. 
+Je leert wat Static Site generation is, wat de voor- en nadelen zijn en hoe je dit kan toepassen. 
 
 ## Werkwijze
 
