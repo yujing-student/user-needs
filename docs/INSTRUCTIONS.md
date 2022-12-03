@@ -30,7 +30,7 @@ De website die je gebouwd heb maakt tot nu toe gebruik van server side rendering
 4. Maak op je localhost een build van de website en documenteer in je wiki de _response tijd_ en het aantal _kilobytes_ dat in nu de response wordt meegestuurd voor de homepage.
 
 ### Integreren
-Nu de website statisch gegeneerd wordt, ga je de website publiceren naar het internet en ga je ervoor zorgen dat bij een verandering van de content of de code de website opnieuw gebuild wordt.
+Nu de website statisch gegeneerd wordt, ga je de website publiceren naar het internet en ga je ervoor zorgen dat bij een verandering van de content of de code de website opnieuw gebuild wordt (continuous deployment).
 
 #### Aanpak
 1. Publiceer je website met bijvoorbeeld Netlify of Vercel. Nu je statische pagina's publiceertd kan je ook met een GitHub action automatisch de site laten builden bij een update van de code.
