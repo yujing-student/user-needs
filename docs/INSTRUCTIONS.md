@@ -18,15 +18,12 @@ Je leert wat Static Site generation is, wat de voor- en nadelen zijn en hoe je d
 
 ## Werkwijze
 
-Deze ## Werkwijze
-
 Deze opdracht gaat over de DLC fases **Bouwen** en **Integreren** 
 
 ### Bouwen
 De website die je gebouwd heb maakt tot nu toe gebruik van server side rendering. Elke keer dat een bezoeker van de website een pagina bezoekt wordt er een request naar de server gedaan en rendert de server de betreffende pagina voordat de response naar de browser wordt teruggestuurd. Aangezien de server de data uit een API moet ophalen (via het headless cms), kan het even duren voordat de pagina gerenderd is. Om de website efficiënter te maken ga je de website van te voren renderen zodat er na een request van een bezoeker alleen maar statische HTML, CSS en JavaScript hoeft worden teruggestuurd.
 
 #### Aanpak
-
 1. Meet van de homepage van de huidige server side gerenderde webiste de _response tijd_ en het aantal _kilobytes_ dat in de response wordt meegestuurd. Doe deze test op jou localhost en kijk hiervoor in de _Dev Tools > Network Tab_ met een _Throttle_ van bijvoorbeeld _Slow 3G_.
 2. maak een branch aan, bijvoorbeeld _static-site_.
 3. Zoek uit hoe je in het door jou gebruikte framework de website statisch gegenereerd kan worden. En pas je code aan volgens de instructies. 
@@ -36,7 +33,6 @@ De website die je gebouwd heb maakt tot nu toe gebruik van server side rendering
 Nu de website statisch gegeneerd wordt, ga je de website publiceren naar het internet en ga je ervoor zorgen dat bij een verandering van de content of de code de website opnieuw gebuild wordt.
 
 #### Aanpak
-
 1. Publiceer je website met bijvoorbeeld Netlify of Vercel. Nu je statische pagina's publiceertd kan je ook met een GitHub action automatisch de site laten builden bij een update van de code.
 2. Zoek uit hoe je na een aanpassing van de content in het headless cms een nieuwe build kan maken 
 
