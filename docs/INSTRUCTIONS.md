@@ -1,7 +1,7 @@
 
 # Back to Static - Static Site Generation
 
-[Beschrijving van de deeltaak]
+Ontwikkel een statisch gegenereerde website voor een opdrachtgever
 
 ## Context
 
