@@ -48,7 +48,7 @@ Voor deze leertaak gelden de gedragscriteria voor sprint 17 Back to Static:
 * Methodisch handelen: Weegt belangen van de eindgebruiker en de eisen en wensen van een opdrachtgever af bij het realiseren van een oplossing voor een opdrachtgever.
 * Probleemoplossend vermogen: Analyseert een vraag, signaleert knelpunten en kiest onderbouwd een oplossingsrichting.
 * Lerend vermogen: Maakt aangeboden en zelf gevonden materie eigen, gebruikt dit bij leertaken, deelt ervaring binnen de squad en leert van anderen.
-* Lerend vermogen: Kent eigen capaciteiten en beperkingen, waardeert het vermogen van anderen en maakt dit bespreekbaar.
+* ~~Lerend vermogen: Kent eigen capaciteiten en beperkingen, waardeert het vermogen van anderen en maakt dit bespreekbaar.~~
 
 Deze opdracht is done als:
 - [ ] jouw code een statische website *‌build*;
