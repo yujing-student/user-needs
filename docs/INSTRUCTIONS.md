@@ -52,7 +52,7 @@ Voor deze leertaak gelden de gedragscriteria voor sprint 17 Back to Static:
 
 Deze opdracht is done als:
 - [ ] jouw code een statische website *‌build*;
-- [ ] jouw code automatisch opnieuw *gebuild* wordt en gepubliceerd wordt naar de live site bij een push naar GitHub (continuous deployment);
+- [ ] jouw code automatisch opnieuw *gebuild* wordt en gepubliceerd wordt naar de live site bij een push naar GitHub of na een update van de content(continuous deployment);
 - [ ] de statische website online te bekijken is;
 - [ ] documenteer het verschil in respons tijd en het het verschil in kilobytes.
 
