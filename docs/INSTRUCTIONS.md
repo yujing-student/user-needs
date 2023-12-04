@@ -5,11 +5,11 @@ Ontwikkel een statisch gegenereerde website voor een opdrachtgever.
 
 ## Context
 
-Deze leertaak hoort bij sprint 17 Back to Static. Dit is een leertaak die je individueel of in een team uitvoert.
+Deze leertaak hoort bij sprint 17 Back to Static. Dit is een leertaak die je in een team uitvoert.
 
-In het college _S17W1-01-Sprintplanning-Back-to-Static_ wordt de opdracht uitgelegd. In de Workshop _S17W1-03-Static-Site-Generation_ krijg je uitleg over hoe je statische web pagina's kan genereren met SvelteKit.
+Bij de sprintplanning krijg je uitleg over hoe je statische web pagina's kan genereren met SvelteKit en wordt de opdracht uitgelegd.
 
-Bij deze leertaak hoort de deeltaak:
+Bij deze leertaak hoort voor elk teamlid 3x de deeltaak:
 - [Creative coding](https://github.com/fdnd-task/back-to-static-creative-coding)
 
 ## Doel van deze opdracht
@@ -18,11 +18,19 @@ Je leert wat Static Site generation is, wat de voor- en nadelen zijn en hoe je d
 
 ## Werkwijze
 
-Deze opdracht gaat over de DLC fases **Bouwen** en **Integreren** 
+Deze opdracht gaat over de DLC fases **Analyseren**, **Bouwen** en **Integreren** 
+
+### Analyseren
+
+Onderzoek en bespreek binnen jouw team welke wijze van deployment voor jullie opdracht het beste past. Is dat client-side, server-side, static-site rendering of een combinatie daarvan. Noteer je overweging in de wiki.
+
+We onderzoeken in de volgende stappen in ieder geval het voordeel van SSG ten opzichte van SSR, ongeacht of je dit later daadwerkelijk gaat gebruiken.
 
 ### Bouwen
 
-De website die je gebouwd heb maakt tot nu toe gebruik van *server side rendering*. Elke keer dat een bezoeker van de website een pagina bezoekt wordt een request naar de server gedaan en rendered de server de betreffende pagina alvorens een response naar de browser van de eindgebruiker te sturen. Aangezien de server de data uit een API moet ophalen (via bijv. een headless cms), kan het even duren voordat de pagina gerendered is. Om de website efficiënter te maken gaan we de website van te voren renderen zodat er na een request van een bezoeker alleen maar statische HTML, CSS en JavaScript hoeft worden teruggestuurd en we dus de *build* fase overslaan.
+De website die je gebouwd heb maakt tot nu toe gebruik van *server side rendering*. Elke keer dat een bezoeker van de website een pagina bezoekt wordt een request naar de server gedaan en rendered de server de betreffende pagina alvorens een response naar de browser van de eindgebruiker te sturen. Aangezien de server de data uit een API moet ophalen (via bijv. een headless cms), kan het even duren voordat de pagina gerendered is. 
+
+Om te onderzoeken of dit efficiënter kan gaan we de website van te voren renderen zodat er na een request van een bezoeker alleen maar statische HTML, CSS en JavaScript hoeft worden teruggestuurd en we dus de *build* fase overslaan.
 
 #### Aanpak
 
@@ -43,17 +51,11 @@ Nu de website statisch gegeneerd wordt, publiceer je de website en zorg je er vo
 
 Focus sprint # - De focus van deze sprint ligt op het statisch genereren van een website.
 
-Voor deze leertaak gelden de gedragscriteria voor sprint 17 Back to Static: 
-* Methodisch handelen: Combineert onderbouwd principes, conventies en best-practices op het gebied van frontend, interface design en vormgeving.
-* Methodisch handelen: Weegt belangen van de eindgebruiker en de eisen en wensen van een opdrachtgever af bij het realiseren van een oplossing voor een opdrachtgever.
-* Probleemoplossend vermogen: Analyseert een vraag, signaleert knelpunten en kiest onderbouwd een oplossingsrichting.
-* ~~Lerend vermogen: Maakt aangeboden en zelf gevonden materie eigen, gebruikt dit bij leertaken, deelt ervaring binnen de squad en leert van anderen.~~
-* ~~Lerend vermogen: Kent eigen capaciteiten en beperkingen, waardeert het vermogen van anderen en maakt dit bespreekbaar.~~
-
 Deze opdracht is done als:
 - [ ] jouw code een statische website *‌build*;
-- [ ] jouw code automatisch opnieuw *gebuild* wordt en gepubliceerd wordt naar de live site bij een push naar GitHub of na een update van de content(continuous deployment);
 - [ ] de statische website online te bekijken is;
-- [ ] documenteer het verschil in respons tijd en het het verschil in kilobytes.
+- [ ] je het verschil in respons tijd en het het verschil in kilobytes gedocumenteerd hebt in je wiki.
+- [ ] (optioneel) jouw code automatisch opnieuw *gebuild* wordt en gepubliceerd wordt naar de live site bij een push naar GitHub of na een update van de content(continuous deployment);
+- [ ] maak een keuze voor de deployment van jouw site en onderbouw in je wiki waarom dit de beste optie is
 
 
