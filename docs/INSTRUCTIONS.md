@@ -8,7 +8,7 @@ In de sprint User Needs leer je pleasurable interfaces ontwerpen, maken en teste
 Deze leertaak hoort bij sprint 17 User Needs. Dit is een leertaak die je in een team uitvoert.
 
 Bij deze leertaak hoort voor elk teamlid 3x individueel de deeltaak:
-- [Creative coding](https://github.com/fdnd-task/back-to-static-creative-coding)
+- [Creative Coding Spike](./creative-coding-spike.md)
 
 ## Doel van deze opdracht
 
