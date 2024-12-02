@@ -5,10 +5,10 @@ Ontwerp en maak creatieve oplossingen voor de interface.
 
 ## Context
 
-Deze deeltaak hoort bij sprint # 17 Back to Static. Dit is een deeltaak die je in totaal drie keer individueel uitvoert. Bij de sprintplanning wordt de opdracht uitgelegd.
+Deze deeltaak hoort bij sprint # 17 User Needs. Dit is een deeltaak die je in totaal drie keer individueel uitvoert. Bij de sprintplanning wordt de opdracht uitgelegd.
 
 Deze deeltaak hoort bij de leertaak:
-- [back-to-static-site-generation](https://github.com/fdnd-task/back-to-static-static-site-generation)
+- [User Needs](./INSTRUCTIONS.md)
 
 ## Doel van deze opdracht
 
