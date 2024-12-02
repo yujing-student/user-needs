@@ -27,20 +27,22 @@ Elke week ontwerp en maak je een creatieve oplossing, welke je op vrijdag gaat t
 ## Aanpak
 
 1. Kies of bedenk in overleg met jouw team een experiment om te gaan maken, gebruik hiervoor de (FDND Conceptroulette)[https://conceptroulette.fdnd.nl/]
-2. Maak een branch voor jouw experiment
-3. Maak een tijdsinschatting en schiet issues in voor je taken (lees even verder voor een idee van taken)
-4. Zoek inspiratie op het web en schets (snel) een aantal ideeen uit in een wireflow
-5. Maak een breakdown-schets met hoe je het experiment in code zou kunnen maken
-6. Bouw je experiment en doe een user test op je klasgenoten
-7. Documenteer je proces in de issue
-8. Checkpoint aankomende vrijdag tijdens de code/design review
+2. Maak een branch voor jouw experiment en kies daarvoor een goede naam (dus niet: branch-experiment1-justus)
+3. Maak een tijdsinschatting en schiet issues in voor je taken (lees even verder)
+4. Zoek inspiratie op het web en schets (snel) een aantal ideeen uit in een wireflow, gebruik eventueel een morphologische kaart
+5. Maak een breakdown-schets met hoe je het experiment in code zou kunnen maken, bespreek dit met teamgenoten of docenten
+6. Bouw jouw experiment en doe een user test op je klasgenoten
+7. Voer en grondige testfase uit, maak een benchmark voor en na implementatie van jouw experiment.
+8. Documenteer doorlopend jouw proces in issues, commits en pull-requests
+9. Checkpoint is aankomende vrijdag tijdens de code/design review
 
 ### Materiaal
 Scroll-driven-animations:
 - [scroll-driven-animations.style door Bramus](https://scroll-driven-animations.style/)
 - [Unleash the power of scroll driven animations @ CSS-Tricks](https://css-tricks.com/unleash-the-power-of-scroll-driven-animations/)
 
-Creative coding Inspiratie
+Creative coding Inspiratie:
+- [Pinterest](https://www.pinterest.com/)
 - [7 secrets for enhancing UX with micro-interactions](https://www.webdesignerdepot.com/2015/07/7-secrets-for-enhancing-ux-with-micro-interactions/)
 - [Site of the day - Awwwards](https://www.awwwards.com/websites/)
 - [Playground Codrops](https://tympanus.net/codrops/category/playground/)
@@ -49,6 +51,6 @@ Creative coding Inspiratie
 
 Deze opdracht is done als je (in totaal 3x):
 
-- [ ] Je hebt een creative-coding experiment ontworpen en gemaakt
-- [ ] Je hebt in de wiki van de leertaak je proces gedocumenteerd
-- [ ] Je hebt in de Readme van de leertaak de experimenten gepresenteerd
+- [ ] Je hebt een creative-coding experiment ontworpen en gemaakt in een aparte branch van jouw teamproject
+- [ ] Je hebt je proces gedocumenteerd in issues, commits en pull-requests
+- [ ] Je hebt in de Readme van de leertaak de experimenten toegelicht
