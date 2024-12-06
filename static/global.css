@@ -1,0 +1,176 @@
+@font-face {
+  font-family: Archivo;
+  src: url(/font/Archivo-VariableFont_wdth\,wght.woff2);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  font-display: swap;
+  src: url('/font/font2/archivo-v19-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Martian Mono';
+  src: url('/font/font2/martian-mono-v3-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+* {
+  /*todo uitzoekenw aarom border box de subscribe button text aanpaast*/
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Archivo", sans-serif;
+}
+
+:root {
+  --black: #222226;
+  --grey: #666666;
+  --white: #fff;
+  --blue: #364bf7;
+
+  --martian-mono: "Martian Mono", system-ui;
+}
+
+body{
+  background: rgb(129, 228, 168);
+  background: linear-gradient(83deg, rgb(240 184 184) 0%, rgb(194, 250, 243) 47%, rgb(255 174 249) 100%);
+}
+h1 {
+  font-size: 6rem;
+  letter-spacing: -2px;
+  line-height: 6rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 4rem;
+  letter-spacing: -2px;
+  line-height: 4rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 3rem;
+  letter-spacing: -2px;
+  line-height: 3rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+h4 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: normal;
+}
+
+h5 {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  font-weight: normal;
+}
+
+p {
+  font-size: 1.12rem;
+  line-height: 2rem;
+}
+
+a {
+  font-family: var(--martian-mono);
+  color: var(--blue);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+
+
+a:focus-visible, button:focus-visible {
+  color: var(--blue);
+  font-weight: bolder;
+  border: 3px dashed var(--blue);
+}
+
+.subtext {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.25px;
+}
+
+@media (max-width: 35em) {
+  h1 {
+    font-size: 3rem;
+    line-height: 100%;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+    line-height: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  h5 {
+    font-size: 1.12rem;
+    line-height: 2rem;
+  }
+
+  h6 {
+    font-size: 1.12rem;
+    line-height: 2rem;
+  }
+}
+
+header {
+  border-bottom: 1px solid var(--black);
+}
+
+main {
+  line-height: 1.5;
+  padding: 2rem;
+  border-bottom: 1px solid var(--black);
+}
+
+@media (min-width: 43rem) {
+  header,
+  main,
+  footer {
+    width: 100%;
+    max-width: calc(100vw - 2rem);
+  }
+
+  header {
+    margin: 1rem;
+    margin-bottom: 0;
+    border: solid var(--black);
+    border-width: 1px;
+  }
+
+  main {
+    margin: 0 1rem;
+    border: solid var(--black);
+    border-width: 0px 1px 1px 1px;
+    border-top: none;
+    padding: 1rem;
+  }
+
+  footer {
+    margin: 0 1rem 1rem 1rem;
+    border: solid var(--black);
+    border-width: 0px 1px 1px 1px;
+  }
+}
