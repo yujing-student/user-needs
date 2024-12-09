@@ -2,6 +2,7 @@
     import Link from "$lib/Link.svelte";
     export let data;
 
+    // todo onmount must be added 
     if (document.startViewTransition) {
               document.startViewTransition(function () {
                 console.log("startViewTransition+page");
