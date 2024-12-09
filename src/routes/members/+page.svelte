@@ -8,7 +8,16 @@
   import Searchbar from "$lib/Searchbar.svelte";
   import IntroSection from "$lib/IntroSection.svelte";
 
-
+  if (document.startViewTransition) {
+              document.startViewTransition(function () {
+                console.log("startViewTransition+page");
+                document.querySelector(ShowResultsData).innerHTML = responseHTML;
+              });
+            } else 
+            {
+              document.querySelector(ShowResultsData).innerHTML = responseHTML;
+            }
+          
   $: filteredMembers = data.members.filter((member) =>
     member.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
