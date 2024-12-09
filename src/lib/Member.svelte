@@ -1,7 +1,28 @@
 <script>
     import Link from "$lib/Link.svelte";
-
     export let data;
+
+    if (document.startViewTransition) {
+              document.startViewTransition(function () {
+                console.log("startViewTransition+page");
+
+                // todo the cards must be coming with the view transiton from top to bottom
+                document.querySelector(ShowResultsData).innerHTML = responseHTML;
+
+                const cards = document.querySelectorAll(".card");
+              //  .classList.add("another-class");
+              cards.classList.add("test");
+
+
+                // todo add background color to the cards
+                document.querySelector(cards);
+              });
+            } else 
+            {
+
+              // document.querySelector(ShowResultsData).innerHTML = responseHTML;
+            }
+ 
 </script>
 
 
