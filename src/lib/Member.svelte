@@ -5,7 +5,7 @@
 
 
 
-    onMount(async () => {
+    onMount( () => {
 
         if (document.startViewTransition) {
             // (check for browser support)
@@ -28,20 +28,6 @@
 
                     // todo the cards must be coming with the view transiton from top to bottom
 
-
-
-                    document.addEventListener("mouseover", function (event) {
-                        const cardElement = document.querySelectorAll('.card')
-                            cardElement.classList.add("hovered")
-                        console.log(cardElement+' dit zijn de cards');
-
-                        }
-                    )
-                    document.addEventListener("mouseout", function (event) {
-                            const cardElement = document.querySelectorAll('.card')
-                            cardElement.classList.remove("hovered")
-                        }
-                    )
 
                 });
             }
