@@ -1,29 +1,38 @@
 <script>
     import Link from "$lib/Link.svelte";
+    import {onMount} from "svelte";
     export let data;
 
-    // todo onmount must be added 
-    if (document.startViewTransition) {
-              document.startViewTransition(function () {
+
+    onMount(async () => {
+        if (document.startViewTransition) {
+            document.startViewTransition(function () {
                 console.log("startViewTransition+page");
 
                 // todo the cards must be coming with the view transiton from top to bottom
-                document.querySelector(ShowResultsData).innerHTML = responseHTML;
-
+                // document.querySelector(ShowResultsData).innerHTML = responseHTML;
+                // Create a container element (optional)
                 const cards = document.querySelectorAll(".card");
-              //  .classList.add("another-class");
-              cards.classList.add("test");
+
+                cards.forEach(card => {
+                    card.classList.add("test");
+
+                });
+                console.log(cards+'dit zijn de cards');
 
 
                 // todo add background color to the cards
-                document.querySelector(cards);
-              });
-            } else 
-            {
+                // document.querySelector(cards);
+            });
+        } else
+        {
 
-              // document.querySelector(ShowResultsData).innerHTML = responseHTML;
-            }
- 
+            // document.querySelector(ShowResultsData).innerHTML = responseHTML;
+        }
+    });
+
+
+
 </script>
 
 
@@ -66,6 +75,13 @@
 
 </section>
 <style>
+
+    .test{
+        background-color: red;
+    }
+    .testeen{
+        background-color: blue;
+    }
 
 
     /*hieronder normale code*/
@@ -134,41 +150,50 @@
     }
 
     /*animatie*/
-    @media (prefers-reduced-motion: no-preference) {
-        img {
-            animation: reveal 1s linear both;
-            /* Rember to declare the timeline after the shorthand */
-            animation-timeline: view();
-        }
-    }
+    /*@media (prefers-reduced-motion: no-preference) {*/
+    /*    img {*/
+    /*        animation: reveal 1s linear both;*/
+    /*        !* Rember to declare the timeline after the shorthand *!*/
+    /*        animation-timeline: view();*/
+    /*    }*/
+    /*}*/
 
-    /*animatie tonen image van klein naar groot*/
-    @keyframes reveal {
-        from {
-            opacity: 0;
-            clip-path: inset(30% 30% 25% 30%);
-        }
-        50% {
-            opacity: 1;
-            clip-path: inset(0% 0% 0% 0%);
-        }
-    }
+    /*!*animatie tonen image van klein naar groot*!*/
+    /*@keyframes reveal {*/
+    /*    from {*/
+    /*        opacity: 0;*/
+    /*        clip-path: inset(30% 30% 25% 30%);*/
+    /*    }*/
+    /*    50% {*/
+    /*        opacity: 1;*/
+    /*        clip-path: inset(0% 0% 0% 0%);*/
+    /*    }*/
+    /*}*/
 
-    /*animatie slide up om de card te tonen van beneden naar boven*/
+
+    /*!*animatie slide up om de card te tonen van beneden naar boven*!*/
     @keyframes slide-in-up {
 
 
         0% {
-
+            /*background-color: red;*/
             transform: translateY(10em);
-            background-color: white;
+            filter: blur(25px);
+            transition: filter 0.3s ease-in-out;
         }
         25% {
             transform: translateY(5em);
-            background-color: white;
+            filter: blur(15px);
+            transition: filter 0.3s ease-in-out;
         }
         50% {
-            background-color: white;
+            filter: blur(0px);
+            transition: filter 0.3s ease-in-out;
+        }
+
+        100%{
+            filter: blur(10px);
+            transition: filter 0.3s ease-in-out;
         }
 
     }
@@ -177,7 +202,7 @@
     @keyframes white-background-cards {
         0% {
             background-position: 0% 50%;
-            background-color: white;
+            background-color: red;
         }
         100% {
             background-position: 100% 50%;
@@ -190,6 +215,8 @@
             animation-timeline: view();
         }
     }
+
+
     @media (max-width: 350px) {
 
         .grid-container {
@@ -229,9 +256,12 @@
 
     @media (min-width: 325px) {
         .grid-container {
+            padding: 1rem;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         }
-
+        .card{
+            border: 1px solid var(--grey);
+        }
     }
 
     @media (max-width: 766px) {
@@ -245,14 +275,16 @@
     /*animtiate moet vna boven naar beneden zijn*/
     /*2 koloms */
     @media (min-width: 765px) and (max-width: 1127px) {
-        .card:nth-child(-n+4) {
-            border-top: none;
+        /*.card:nth-child(-n+4) {*/
+        /*    border-top: none;*/
 
-        }
+        /*}*/
 
-        .card:nth-child(odd) {
-            border-right: 1px solid var(--grey);
-        }
+        /*.card:nth-child(odd) {*/
+        /*    border-right: 1px solid var(--grey);*/
+        /*}*/
+
+
 
 
     }
@@ -261,102 +293,102 @@
     /*3koloms*/
 
     /*hier nog een animatie op toevoegen*/
-    @media (min-width: 1127px) and (max-width: 1466px) {
+    /*@media (min-width: 1127px) and (max-width: 1466px) {*/
 
-        .grid-container {
-            width: 100%;
+    /*    .grid-container {*/
+    /*        width: 100%;*/
 
-        }
-
-
-        /*alle 3 tegelijk kan niet*/
-        @media (prefers-reduced-motion: no-preference) {
-            .card:nth-child(3n) {
-
-                border-right: 1px solid var(--grey);
+    /*    }*/
 
 
-            }
+    /*    !*alle 3 tegelijk kan niet*!*/
+    /*    @media (prefers-reduced-motion: no-preference) {*/
+    /*        .card:nth-child(3n) {*/
 
-            .card:nth-child(3n+2) {
-                border-right: 1px solid var(--grey);
-
-            }
-
-            .card:nth-child(3n+4),
-            .card:nth-child(1) {
-                border-right: 1px solid var(--grey);
+    /*            border-right: 1px solid var(--grey);*/
 
 
-            }
-        }
+    /*        }*/
+
+    /*        .card:nth-child(3n+2) {*/
+    /*            border-right: 1px solid var(--grey);*/
+
+    /*        }*/
+
+    /*        .card:nth-child(3n+4),*/
+    /*        .card:nth-child(1) {*/
+    /*            border-right: 1px solid var(--grey);*/
 
 
-    }
+    /*        }*/
+    /*    }*/
+
+
+    /*}*/
 
     /*4koloms*/
-    @media (min-width: 1466px) and (max-width: 1815px) {
+    /*@media (min-width: 1466px) and (max-width: 1815px) {*/
 
 
-        .card:nth-child(4n-1),
-        .card:nth-child(4n-2),
-        .card:nth-child(4n-3) {
-            border-right: 1px solid var(--grey);
-        }
+    /*    .card:nth-child(4n-1),*/
+    /*    .card:nth-child(4n-2),*/
+    /*    .card:nth-child(4n-3) {*/
+    /*        border-right: 1px solid var(--grey);*/
+    /*    }*/
 
-    }
+    /*}*/
 
-    @media (min-width: 1466px) {
+    /*@media (min-width: 1466px) {*/
 
-    }
+    /*}*/
 
-    /*5colums */
+    /*!*5colums *!*/
 
-    @media (min-width: 1815px) and (max-width: 2165px) {
-
-
-        .card:nth-child(5n-1),
-        .card:nth-child(5n-2),
-        .card:nth-child(5n-3),
-        .card:nth-child(5n-4) {
-            border-right: 1px solid var(--grey);
-        }
+    /*@media (min-width: 1815px) and (max-width: 2165px) {*/
 
 
-    }
-
-    /*6colums */
-    @media (min-width: 2165px) and (max-width: 2516px) {
-
-
-        .card:nth-child(6n-1),
-        .card:nth-child(6n-2),
-        .card:nth-child(6n-3),
-        .card:nth-child(6n-4),
-        .card:nth-child(6n-5) {
-            border-right: 1px solid var(--grey);
-        }
-    }
-
-    /*7 colums*/
-    @media (min-width: 2516px) {
+    /*    .card:nth-child(5n-1),*/
+    /*    .card:nth-child(5n-2),*/
+    /*    .card:nth-child(5n-3),*/
+    /*    .card:nth-child(5n-4) {*/
+    /*        border-right: 1px solid var(--grey);*/
+    /*    }*/
 
 
-        .card:nth-child(6n),
-        .card:nth-child(6n-1),
-        .card:nth-child(6n-2),
-        .card:nth-child(6n-3),
-        .card:nth-child(6n-4),
-        .card:nth-child(13),
-        .card:nth-child(26) {
-            border-right: 1px solid var(--grey);
-        }
+    /*}*/
 
-        .card:nth-child(7n) {
-            border-right: none;
-        }
+    /*!*6colums *!*/
+    /*@media (min-width: 2165px) and (max-width: 2516px) {*/
 
-    }
+
+    /*    .card:nth-child(6n-1),*/
+    /*    .card:nth-child(6n-2),*/
+    /*    .card:nth-child(6n-3),*/
+    /*    .card:nth-child(6n-4),*/
+    /*    .card:nth-child(6n-5) {*/
+    /*        border-right: 1px solid var(--grey);*/
+    /*    }*/
+    /*}*/
+
+    /*!*7 colums*!*/
+    /*@media (min-width: 2516px) {*/
+
+
+    /*    .card:nth-child(6n),*/
+    /*    .card:nth-child(6n-1),*/
+    /*    .card:nth-child(6n-2),*/
+    /*    .card:nth-child(6n-3),*/
+    /*    .card:nth-child(6n-4),*/
+    /*    .card:nth-child(13),*/
+    /*    .card:nth-child(26) {*/
+    /*        border-right: 1px solid var(--grey);*/
+    /*    }*/
+
+    /*    .card:nth-child(7n) {*/
+    /*        border-right: none;*/
+    /*    }*/
+
+    /*}*/
 
 
 </style>
