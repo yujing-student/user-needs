@@ -48,7 +48,7 @@
 
             else
             {
-                document.querySelector(cards).classList.add("testeen");
+
             }
 
 
