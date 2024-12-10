@@ -4,31 +4,55 @@
     export let data;
 
 
+
     onMount(async () => {
+
         if (document.startViewTransition) {
-            document.startViewTransition(function () {
-                console.log("startViewTransition+page");
+            // (check for browser support)
+            document.addEventListener("click", function (event) {
+                if (event.target.matches("summary")) {
+                    event.preventDefault(); // (we'll toggle the element ourselves)
+                    const details = event.target.closest("details");
+                    document.startViewTransition(() => details.toggleAttribute("open"));
+                }
+            });
+        }
 
-                // todo the cards must be coming with the view transiton from top to bottom
-                // document.querySelector(ShowResultsData).innerHTML = responseHTML;
-                // Create a container element (optional)
-                const cards = document.querySelectorAll(".card");
 
-                cards.forEach(card => {
-                    card.classList.add("test");
+
+        // here must be a gradient on the cards when hovering code isnt working there is something wrong with teh addeventlisteners
+
+            if (document.startViewTransition) {
+                document.startViewTransition(function () {
+                    console.log("startViewTransition+page");
+
+                    // todo the cards must be coming with the view transiton from top to bottom
+
+
+
+                    document.addEventListener("mouseover", function (event) {
+                        const cardElement = document.querySelectorAll('.card')
+                            cardElement.classList.add("hovered")
+                        console.log(cardElement+' dit zijn de cards');
+
+                        }
+                    )
+                    document.addEventListener("mouseout", function (event) {
+                            const cardElement = document.querySelectorAll('.card')
+                            cardElement.classList.remove("hovered")
+                        }
+                    )
 
                 });
-                console.log(cards+'dit zijn de cards');
+            }
+
+            else
+            {
+                document.querySelector(cards).classList.add("testeen");
+            }
 
 
-                // todo add background color to the cards
-                // document.querySelector(cards);
-            });
-        } else
-        {
 
-            // document.querySelector(ShowResultsData).innerHTML = responseHTML;
-        }
     });
 
 
@@ -36,7 +60,13 @@
 </script>
 
 
-<section class="grid-container">
+<section class="">
+    <details>
+        <summary>open cards</summary>
+
+        <div class="grid-container">
+
+
     {#each data.members as member}
 
         <article class="card">
@@ -70,19 +100,27 @@
             </Link>
 
         </article>
+
     {/each}
-
-
+        </div>
+    </details>
 </section>
 <style>
 
-    .test{
+
+    .hovered{
         background-color: red;
     }
-    .testeen{
-        background-color: blue;
+
+    .card {
+        transition: all 0.5s ease-in-out;
     }
 
+    .card:hover {
+        transform: scale(1.1);
+        background-color: #f0f0f0;
+        cursor: pointer;
+    }
 
     /*hieronder normale code*/
     .grid-container {
