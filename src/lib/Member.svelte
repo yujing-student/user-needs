@@ -3,109 +3,104 @@
     import {onMount} from "svelte";
     export let data;
 
-
-
-    onMount( () => {
-
+    onMount(() => {
         if (document.startViewTransition) {
-            // (check for browser support)
-            document.addEventListener("click", function (event) {
-                if (event.target.matches("summary")) {
-                    event.preventDefault(); // (we'll toggle the element ourselves)
-                    const details = event.target.closest("details");
-                    document.startViewTransition(() => details.toggleAttribute("open"));
-                }
-            });
-        }
-
-
-
-        // here must be a gradient on the cards when hovering code isnt working there is something wrong with teh addeventlisteners
-
-            if (document.startViewTransition) {
-                document.startViewTransition(function () {
-                    console.log("startViewTransition+page");
-
-                    // todo the cards must be coming with the view transiton from top to bottom
-
-
+            const buttons = document.querySelectorAll('.button');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', () => {
+                    const clickedCard = buttons[i].closest('.card');
+                    clickedCard.classList.toggle('active');
                 });
             }
 
-            else
-            {
+            // https://codepen.io/user46frontend/pen/PwYzyZG eigne voorbeeld
+        }
 
-            }
+        else
+        {
 
-
+        }
 
     });
-
-
-
 </script>
 
 
 <section class="">
-    <details>
-        <summary>open cards</summary>
 
-        <div class="grid-container">
+    <div class="grid-container">
+        {#each data.members as member}
 
+            <article class="card">
+                <picture>
+                    <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
+                    <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
+                    <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="{member.title}">
+                </picture>
 
-    {#each data.members as member}
+                <ul class="card-label-filters">
+                    <li class="label-filters">
+                        service design
+                    </li>
+                    <li class="label-filters">label</li>
+                </ul>
 
-        <article class="card">
-            <picture>
-                <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
-                <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
-                <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="{member.title}">
-            </picture>
+                <h2 aria-label="{member.title}">{member.title}</h2>
+                <p>{member.address}</p>
 
-            <ul class="card-label-filters">
-                <li class="label-filters">
-                    service design
-                </li>
-                <li class="label-filters">label</li>
-            </ul>
+                <ul class="card-label">
+                    <li>{parseInt(member.colleagues)}  werknemers</li>
+                    <li class="card-hiring">hiring</li>
 
-            <h2 aria-label="{member.title}">{member.title}</h2>
-            <p>{member.address}</p>
+                </ul>
 
-            <ul class="card-label">
-                <li>{parseInt(member.colleagues)}  werknemers</li>
-                <li class="card-hiring">hiring</li>
+                <Link href="/" clazz="detail-link"><span slot="link-text">Details</span>
+                    <svg width="16" height="16" slot="svg-icon-right" viewBox="0 0 24 24" fill="none">
+                        <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round"/>
+                    </svg>
+                </Link>
 
-            </ul>
+                <button class="button" >maak mij recht</button>
+            </article>
 
-            <Link href="/" clazz="detail-link"><span slot="link-text">Details</span>
-                <svg width="16" height="16" slot="svg-icon-right" viewBox="0 0 24 24" fill="none">
-                    <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"/>
-                </svg>
-            </Link>
-
-        </article>
-
-    {/each}
-        </div>
-    </details>
+        {/each}
+    </div>
+    <!--    </details>-->
 </section>
 <style>
 
 
-    .hovered{
+
+    :global(.card.active) {
+        background: linear-gradient(300deg, rgb(128, 216, 250) 0%, rgb(235, 235, 255) 47%, rgba(0,212,255,1) 100%);
+        rotate: 348deg;
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .card{
+            animation:rotating;
+        }
+        :global(.card.active) {
+            animation: none; /* Remove the animation */
+        }
+    }
+    :global(.color) {
         background-color: red;
     }
 
-    .card {
-        transition: all 0.5s ease-in-out;
-    }
 
-    .card:hover {
-        transform: scale(1.1);
-        background-color: #f0f0f0;
-        cursor: pointer;
+    .button{
+        background-color: var(--blue);
+        color: white;
+        font-size: 18px;
+        width: max-content;
+        padding: 8px;
+        /*border-radius: 15px;*/
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .button:hover {
+        background-color: black;
     }
 
     /*hieronder normale code*/
@@ -204,6 +199,7 @@
             transform: translateY(10em);
             filter: blur(25px);
             transition: filter 0.3s ease-in-out;
+            rotate: 405deg;
         }
         25% {
             transform: translateY(5em);
