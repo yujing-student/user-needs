@@ -9,7 +9,7 @@
 
 <!--http://localhost:5173/Lid-worden-->
 <IntroSection
-        title="INSCHRIJVEN"
+        title="Lid-worden"
         subtitle=""
 />
 

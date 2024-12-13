@@ -12,9 +12,8 @@
 
 
 </script>
-
+<h2>Inschrijven</h2>
 <form action="/bedankt" class="form">
-    <!--     todo met css steertetje maken befoe en after -->
     <fieldset>
         <legend>persoonlijke gegevens</legend>
         <Input label="Functie" id="Functie" name="Functie" />
@@ -28,7 +27,6 @@
         <Textareacompoent label="Ik-wil-graag-lid-worden" id="Ik-wil-graag-lid-worden" />
         <label class="dropown" for="FTE">
             <span class="star">  FTE</span>
-            <!--todo uitzoeken hoe je een false state kan doen met bind en css -->
             <!--            //     https://svelte.dev/docs/svelte/bind-->
             <select aria-required="true" bind:value={selectedValue}
                     name="FTE"

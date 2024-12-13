@@ -2,7 +2,9 @@
     export let label;
     export let id;
     export let name;
-    export let type = 'text'; // Default type is 'text'
+    export let type = 'text';
+    // todo de type moeten meerdere worden dus text email mobile zodat je 1 input hebt en een select component
+    // Default type is 'text'
     export let placeholder = '';
     export let required = true;
 </script>

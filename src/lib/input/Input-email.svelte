@@ -1,8 +1,17 @@
 <script>
+
+<!--    dit staat overal anders en de rest hieronder is hetzelfde hier moet dus 1 input gemaakt van worden-->
+    export let type = 'email'; // Default type is 'text'
+
+
+
+
     export let label;
     export let id;
     export let name;
-    export let type = 'email'; // Default type is 'text'
+
+
+
     export let placeholder = '';
     export let required = true;
 </script>
