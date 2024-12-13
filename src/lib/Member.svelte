@@ -178,15 +178,15 @@
     }
 
     /*gradient animation white*/
-    @keyframes white-background-cards {
-        0% {
-            background-position: 0% 50%;
-            background-color: red;
-        }
-        100% {
-            background-position: 100% 50%;
-        }
-    }
+    /*@keyframes white-background-cards {*/
+    /*    0% {*/
+    /*        background-position: 0% 50%;*/
+    /*        background-color: red;*/
+    /*    }*/
+    /*    100% {*/
+    /*        background-position: 100% 50%;*/
+    /*    }*/
+    /*}*/
 
     @media (prefers-reduced-motion: no-preference) {
         .card {
