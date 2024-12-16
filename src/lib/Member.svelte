@@ -59,32 +59,8 @@
             // Volume
             // https://developer.mozilla.org/en-US/docs/Web/API/GainNode
             const gainNode = audioCtx.createGain();
-
-            const volumeControl = document.querySelector('[data-action="volume"]');
-            volumeControl.addEventListener(
-                "input",
-                (ev) => {
-                    gainNode.gain.value = ev.currentTarget.value;
-                },
-                false
-            );
-
-            // Panning
-            // https://developer.mozilla.org/en-US/docs/Web/API/StereoPannerNode
-            const pannerOptions = { pan: 0 };
-            const panner = new StereoPannerNode(audioCtx, pannerOptions);
-
-            const pannerControl = document.querySelector('[data-action="panner"]');
-            pannerControl.addEventListener(
-                "input",
-                (ev) => {
-                    panner.pan.value = ev.currentTarget.value;
-                },
-                false
-            );
-
             // Connect
-            track.connect(gainNode).connect(panner).connect(audioCtx.destination);
+            track.connect(gainNode).connect(audioCtx.destination);
         }
     });
 
@@ -92,7 +68,22 @@
 
 </script>
 
+<div class="box">
+    <section>
 
+        <h3>speel kerstmuziek</h3>
+        <audio src="/jingle-bells.mp3" crossorigin="anonymous">
+        </audio>
+
+        <!--            <audio controls="" autoplay="" name="media"><source src="/jingle-bells.mp3" type="audio/mpeg"></audio>-->
+
+
+        <button data-playing="false" class="play-btn" role="switch">
+            <span>Play / Pause</span>
+        </button>
+    </section>
+
+</div>
 <section class="grid-container">
     {#each data.members as member}
 
@@ -128,47 +119,6 @@
 
         </article>
     {/each}
-    <div class="box">
-        <section class="controls">
-            <div>
-                <input id="volume" type="range" class="control-volume" min="0" max="2" value="1" list="gain-vals" step="0.01" data-action="volume" />
-            </div>
-
-            <div>
-                <!-- https://en.wikipedia.org/wiki/Panning_(audio) -->
-                <label for="panner">Panning:</label>
-                <br>
-                <input id="panner" type="range" class="control-panner" list="pan-vals" min="-1" max="1" value="0" step="0.01" data-action="panner" />
-                <datalist id="pan-vals">
-                    <option value="-1" label="left">
-                    <option value="1" label="right">
-                </datalist>
-                <div class="input-labels">
-                    <span>Left <small>[-1]</small></span>
-                    <span>Right <small>[1]</small></span>
-                </div>
-            </div>
-        </section>
-        <section>
-
-            <audio src="/jingle-bells.mp3" crossorigin="anonymous">
-            </audio>
-
-<!--            <audio controls="" autoplay="" name="media"><source src="/jingle-bells.mp3" type="audio/mpeg"></audio>-->
-
-
-            <button data-playing="false" class="play-btn" role="switch">
-                <span>Play / Pause</span>
-            </button>
-        </section>
-
-    </div>
-
-
-    <h3>example</h3>
-        <div>
-            <small> Jorge Baumann </small>
-        </div>
 
 
 </section>
@@ -471,6 +421,13 @@
     .box {
 
         background-color: #f5f5f5;
+    }
+    .play-btn{
+        background-color: var(--blue);
+        color: var(--white);
+        font-size: 4rem;
+        box-shadow: 10px 10px 10px 10px;
+        border-radius: 15px;
     }
     /*.box .controls > div {*/
     /*    margin-bottom: 20px;*/
