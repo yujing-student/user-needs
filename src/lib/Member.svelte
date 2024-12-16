@@ -2,6 +2,94 @@
     import Link from "$lib/Link.svelte";
 
     export let data;
+    import { onMount } from "svelte";
+
+
+    onMount(async () => {
+        // Cross browser
+
+        // link inspiration :https://codepen.io/baumannzone/pen/OJyBaPK
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        let audioCtx;
+
+        // load some sound
+        const audioElement = document.querySelector("audio");
+        let track;
+
+        const playButton = document.querySelector(".play-btn");
+
+        // play pause audio
+        playButton.addEventListener(
+            "click",
+            (ev) => {
+                if (!audioCtx) {
+                    init();
+                }
+
+                // check if context is in suspended state (autoplay policy)
+                if (audioCtx.state === "suspended") {
+                    audioCtx.resume();
+                }
+
+                if (ev.currentTarget.dataset.playing === "false") {
+                    audioElement.play();
+                    ev.currentTarget.dataset.playing = "true";
+                } else if (ev.currentTarget.dataset.playing === "true") {
+                    audioElement.pause();
+                    ev.currentTarget.dataset.playing = "false";
+                }
+            },
+            false
+        );
+
+        // if track ends
+        audioElement.addEventListener(
+            "ended",
+            () => {
+                playButton.dataset.playing = "false";
+                playButton.setAttribute("aria-checked", "false");
+            },
+            false
+        );
+
+        function init() {
+            audioCtx = new AudioContext();
+            track = audioCtx.createMediaElementSource(audioElement);
+
+            // Volume
+            // https://developer.mozilla.org/en-US/docs/Web/API/GainNode
+            const gainNode = audioCtx.createGain();
+
+            const volumeControl = document.querySelector('[data-action="volume"]');
+            volumeControl.addEventListener(
+                "input",
+                (ev) => {
+                    gainNode.gain.value = ev.currentTarget.value;
+                },
+                false
+            );
+
+            // Panning
+            // https://developer.mozilla.org/en-US/docs/Web/API/StereoPannerNode
+            const pannerOptions = { pan: 0 };
+            const panner = new StereoPannerNode(audioCtx, pannerOptions);
+
+            const pannerControl = document.querySelector('[data-action="panner"]');
+            pannerControl.addEventListener(
+                "input",
+                (ev) => {
+                    panner.pan.value = ev.currentTarget.value;
+                },
+                false
+            );
+
+            // Connect
+            track.connect(gainNode).connect(panner).connect(audioCtx.destination);
+        }
+    });
+
+
+
 </script>
 
 
@@ -40,6 +128,47 @@
 
         </article>
     {/each}
+    <div class="box">
+        <section class="controls">
+            <div>
+                <input id="volume" type="range" class="control-volume" min="0" max="2" value="1" list="gain-vals" step="0.01" data-action="volume" />
+            </div>
+
+            <div>
+                <!-- https://en.wikipedia.org/wiki/Panning_(audio) -->
+                <label for="panner">Panning:</label>
+                <br>
+                <input id="panner" type="range" class="control-panner" list="pan-vals" min="-1" max="1" value="0" step="0.01" data-action="panner" />
+                <datalist id="pan-vals">
+                    <option value="-1" label="left">
+                    <option value="1" label="right">
+                </datalist>
+                <div class="input-labels">
+                    <span>Left <small>[-1]</small></span>
+                    <span>Right <small>[1]</small></span>
+                </div>
+            </div>
+        </section>
+        <section>
+
+            <audio src="/jingle-bells.mp3" crossorigin="anonymous">
+            </audio>
+
+<!--            <audio controls="" autoplay="" name="media"><source src="/jingle-bells.mp3" type="audio/mpeg"></audio>-->
+
+
+            <button data-playing="false" class="play-btn" role="switch">
+                <span>Play / Pause</span>
+            </button>
+        </section>
+
+    </div>
+
+
+    <h3>example</h3>
+        <div>
+            <small> Jorge Baumann </small>
+        </div>
 
 
 </section>
@@ -336,5 +465,35 @@
 
     }
 
+
+/*    example*/
+
+    .box {
+
+        background-color: #f5f5f5;
+    }
+    /*.box .controls > div {*/
+    /*    margin-bottom: 20px;*/
+    /*}*/
+    /*.box .input-labels {*/
+    /*    display: flex;*/
+    /*    justify-content: space-between;*/
+    /*    font-size: 14px;*/
+    /*    color: #888;*/
+    /*}*/
+    /*.box .input-labels small {*/
+    /*    color: #444;*/
+    /*    font-weight: bold;*/
+    /*}*/
+    /*.play-btn {*/
+    /*    padding: 6px 10px;*/
+    /*    border: none;*/
+    /*    background-color: #222;*/
+    /*    color: #fff;*/
+    /*}*/
+    /*.play-btn:hover {*/
+    /*    cursor: pointer;*/
+    /*    background-color: #555;*/
+    /*}*/
 
 </style>
