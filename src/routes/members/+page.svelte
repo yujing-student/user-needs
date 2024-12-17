@@ -8,6 +8,7 @@
   import Searchbar from "$lib/Searchbar.svelte";
   import IntroSection from "$lib/IntroSection.svelte";
 
+  import MusicPlayer from "$lib/display/music-button.svelte";
 
   $: filteredMembers = data.members.filter((member) =>
     member.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -19,7 +20,7 @@
   title="Leden"
   subtitle="De [nummer] beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging. Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
 />
-
+<MusicPlayer/>
 <section class="filter-section">
   <!--To build : een delay functie, instant feedback is misschien niet user friendlyg-->
   <Searchbar placeholderText="Zoek een bureau" bind:searchTerm />
