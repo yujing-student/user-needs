@@ -6,14 +6,22 @@ De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
 Scroll driven animations spike 1
 
+View transitions api spike 2 livelink:https://user-needs-bhvnj6iuq-yu-jing-projects-0dab48b4.vercel.app/members
+
+christmas web audio Spike 3 livelink :https://user-needs-nmi3vl7i3-yu-jing-projects-0dab48b4.vercel.app/members 
+
 ## Inhoudsopgave
 
   * [Beschrijving](#beschrijving)
   * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Gebruik](#gebruik)
-  * [Bronnen](#bronnen)
-  * [Licentie](#licentie)
+
+[//]: # (  * [Installatie]&#40;#installatie&#41;)
+
+[//]: # (  * [Gebruik]&#40;#gebruik&#41;)
+
+[//]: # (  * [Bronnen]&#40;#bronnen&#41;)
+
+[//]: # (  * [Licentie]&#40;#licentie&#41;)
 
 ## Beschrijving
 <!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
@@ -22,6 +30,8 @@ Scroll driven animations spike 1
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
+
+### spike 1
 Mijn eerste spike is een scroll driven animation voor de cards met als thema contrasting colour dreaming <br>
 in mijn eerdere versies had ik dat ik de cards een andere kleur wilde geven alleen bleek uit de usertest dat dit toch niet zo handig is zie hier de link naar wat ik eerrst had bij `designkeuzes`:  https://github.com/lisagjh/voorhoede/pull/43
 In de pull request kan je zien hoe ik getest heb en waar ik naar gekeken heb om dit te realiseren
@@ -128,16 +138,99 @@ met prefers reduced motion word aangegeven dat mensen die geen voorkeur hebben d
     }
 ````
 
-
-## Installatie
-
-de code staat op een andere branch en daar kan je het vinden :https://github.com/lisagjh/voorhoede/tree/spike/contrasting-digital-dreamscape-Yu-Jing 
-
+### spike 2
+Mijn 2de animatie heb ik met view transitions gemaakt waarin  ik een rotate gebruikt heb en `document.startviewTransitions` zodat als je op de knop `maak mij recht` klikt dat er een smooth overgang is
+de kaartjes draaien als je naar beneden scrolt en stoppen met draaien als je niet scrollt 
 
 
+<h2>video van de animaite</h2>
 
 
-## Gebruik
+video :https://github.com/user-attachments/assets/98195a00-5fd8-442e-97dc-022bae9984ad
+
+
+<h2>Code van de animatie</h2>
+```javascript
+
+ const buttons = document.querySelectorAll('.button');
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', () => {
+                const clickedCard = buttons[i].closest('.card');
+                document.startViewTransition(() =>
+                    clickedCard.classList.toggle('active')
+            )
+            });
+        }
+```
+als de viewtransition niet ondersteund word dan krijgt de gebruiker deze code te zien
+
+````javascript
+  else
+        {
+            const buttons = document.querySelectorAll('.button');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', () => {
+                    const clickedCard = buttons[i].closest('.card');
+                        clickedCard.classList.toggle('active')
+                });
+            }
+        }
+````
+
+daarna bedacht ik me dat het wel leuk is om het andersom te maken dus dat alas je scrollt de cards draaien en als je klikt dat de cards dan recht worden
+
+````css
+  @keyframes Rotate {
+
+
+        0% {
+            /*background-color: red;*/
+            transform: translateY(10em);
+            filter: blur(25px);
+            transition: filter 0.3s ease-in-out;
+            rotate: 405deg;
+        }
+        25% {
+            transform: translateY(5em);
+            filter: blur(15px);
+            transition: filter 0.3s ease-in-out;
+        }
+        50% {
+            filter: blur(0px);
+            transition: filter 0.3s ease-in-out;
+        }
+
+        100%{
+            filter: blur(10px);
+            transition: filter 0.3s ease-in-out;
+        }
+
+    }
+````
+
+ook heb ik rekening gehouden met mensen die niet van dat rotate houden aan de hand van deze code waarin ik aangeef dat mensen die reduce aan hebbens taan geen animatie te zien krijgen
+
+````css 
+   @media (prefers-reduced-motion: reduce) {
+        .card {
+            animation: none;
+        }
+        :global(.card.active) {
+            animation: none; /* Remove the animation */
+        }
+    }
+````
+
+[//]: # (## Installatie)
+
+[//]: # ()
+[//]: # (de code staat op een andere branch en daar kan je het vinden :https://github.com/lisagjh/voorhoede/tree/spike/contrasting-digital-dreamscape-Yu-Jing )
+
+
+
+
+[//]: # ()
+[//]: # (## Gebruik)
 
 ## Bronnen
 
