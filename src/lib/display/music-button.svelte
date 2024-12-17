@@ -66,24 +66,21 @@ onMount(async () => {
 <div class="box">
     <section>
 
-<!--        <h3>speel kerstmuziek</h3>-->
         <audio src="/jingle-bells.mp3" crossorigin="anonymous">
         </audio>
-
-        <!--            <audio controls="" autoplay="" name="media"><source src="/jingle-bells.mp3" type="audio/mpeg"></audio>-->
-
-
         <button data-playing="false" class="play-btn" role="switch">
             <span>speel kerstmuziek</span>
         </button>
     </section>
 
 </div>
+<!--todo animaite cards starten en 1 voor 1 laten inkomen-->
 <style>
     .box {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-bottom: 2rem;
 
         /*background-color: #f5f5f5;*/
     }

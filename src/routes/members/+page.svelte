@@ -77,14 +77,14 @@
 
 <style>
   .filter-section{
-    border-top: 1px solid;
-    border-bottom: 1px solid;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
   }
 
   @media (max-width: 43rem) {
     .filter-section{
-      border-right: 1px solid;
-      border-left: 1px solid;
+      border-right: 1px solid white;
+      border-left: 1px solid white;
 
       margin-left: -16px;
       margin-right: -16px;
@@ -94,7 +94,7 @@
   }
   @media (min-width: 43rem) {
     .filter-section{
-      border-bottom: 1px solid;
+      border-bottom: 1px solid white;
       margin-left: -16px;
       margin-right: -16px;
       margin-bottom: -1rem;
