@@ -200,16 +200,16 @@
     }
 
     /*animatie tonen image van klein naar groot*/
-    @keyframes reveal {
-        from {
-            opacity: 0;
-            clip-path: inset(30% 30% 25% 30%);
-        }
-        50% {
-            opacity: 1;
-            clip-path: inset(0% 0% 0% 0%);
-        }
-    }
+    /*@keyframes reveal {*/
+    /*    from {*/
+    /*        opacity: 0;*/
+    /*        clip-path: inset(30% 30% 25% 30%);*/
+    /*    }*/
+    /*    50% {*/
+    /*        opacity: 1;*/
+    /*        clip-path: inset(0% 0% 0% 0%);*/
+    /*    }*/
+    /*}*/
 
     /*animatie slide up om de card te tonen van beneden naar boven*/
     @keyframes slide-in-up {
@@ -217,17 +217,40 @@
 
         0% {
 
-            transform: translateY(10em);
+            transform: translateY(5em);
             background-color: white;
         }
         25% {
-            transform: translateY(5em);
+            transform: translateY(2.5em);
             background-color: white;
         }
         50% {
             background-color: white;
         }
 
+        100%{
+            transform: translateY(0em);
+        }
+
+    }
+
+    @keyframes slide-in-down {
+        0% {
+
+
+            background-color: white;
+        }
+        25% {
+            transform: translateY(2.5em);
+            background-color: white;
+        }
+        50% {
+            transform: translateY(5em);
+            background-color: white;
+        }
+        100%{
+            transform: translateY(0em);
+        }
     }
 
     /*gradient animation white*/
@@ -241,11 +264,40 @@
         }
     }
 
+
+    @keyframes fadeIn {
+        0% {
+           opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100%{
+            opacity: 2;
+        }
+    }
+
+
     @media (prefers-reduced-motion: no-preference) {
         .card {
-            animation: slide-in-up both, white-background-cards 2s infinite;
+            background: white;
+            border: 1px solid var(--black);
+
+                   /*animation: slide-in-up both, white-background-cards 2s infinite;*/
             animation-timeline: view();
         }
+
+        .card:nth-child(odd){
+            animation: slide-in-up 1s linear both
+        ;
+            animation-timeline: view();
+        }
+        .card:nth-child(even){
+            animation: slide-in-down 1s linear both;
+            animation-timeline: view();
+        }
+
+
     }
     @media (max-width: 350px) {
 
