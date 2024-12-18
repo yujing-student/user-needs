@@ -44,7 +44,7 @@ body{
   background: -ms-radial-gradient(center, ellipse cover, #d35448 0%,#4a110c 100%); /* IE10+ */
   background: radial-gradient(ellipse at center, #d35448 0%,#4a110c 100%); /* W3C */
 
-
+/*todo other animation make*/
 }
 h1 {
   font-size: 6rem;
