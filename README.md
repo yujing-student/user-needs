@@ -2,7 +2,7 @@
 Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. 
 De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 
-# Titel
+# Creative spikes
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
 Scroll driven animations spike 1
 
@@ -29,6 +29,14 @@ testspike livelink:https://user-needs-j1qjlhd6j-yu-jing-projects-0dab48b4.vercel
 <!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar Github Pages 🌐-->
+
+Scroll driven animations spike 1
+
+View transitions api spike 2 livelink:https://user-needs-bhvnj6iuq-yu-jing-projects-0dab48b4.vercel.app/members
+
+christmas web audio Spike 3 livelink :https://user-needs-nmi3vl7i3-yu-jing-projects-0dab48b4.vercel.app/members 
+
+testspike livelink:https://user-needs-j1qjlhd6j-yu-jing-projects-0dab48b4.vercel.app/members
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
@@ -122,6 +130,7 @@ body{
 ````
 
 met prefers reduced motion word aangegeven dat mensen die geen voorkeur hebben deze animatie te zien krijgen en mensen die wel voorkeuren hebben krijgen de animatie niet te zien
+
 ````css
   @media (prefers-reduced-motion: no-preference) {
         img {
@@ -152,6 +161,7 @@ video :https://github.com/user-attachments/assets/98195a00-5fd8-442e-97dc-022bae
 
 
 <h2>Code van de animatie</h2>
+
 ```javascript
 
  const buttons = document.querySelectorAll('.button');
