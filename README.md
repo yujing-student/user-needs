@@ -157,8 +157,10 @@ de kaartjes draaien als je naar beneden scrolt en stoppen met draaien als je nie
 <h2>video van de animaite</h2>
 
 
-video :https://github.com/user-attachments/assets/98195a00-5fd8-442e-97dc-022bae9984ad
+video :
 
+
+https://github-production-user-asset-6210df.s3.amazonaws.com/100352887/395249980-98195a00-5fd8-442e-97dc-022bae9984ad.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20241218%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241218T163912Z&X-Amz-Expires=300&X-Amz-Signature=c0f747c2c35de27c015bff1129a964b1817bfc0e966863e22c612f156390948e&X-Amz-SignedHeaders=host
 
 <h2>Code van de animatie</h2>
 
