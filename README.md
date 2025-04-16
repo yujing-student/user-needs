@@ -45,7 +45,7 @@ christmas web audio Spike waar de cards bewegen 4  livelink:https://user-needs-j
 Mijn eerste spike is een scroll driven animation voor de cards met als thema contrasting colour dreaming <br>
 in mijn eerdere versies had ik dat ik de cards een andere kleur wilde geven alleen bleek uit de usertest dat dit toch niet zo handig is zie hier de link naar wat ik eerrst had bij `designkeuzes`:  
 
-In de [pull request]([url](https://github.com/lisagjh/voorhoede/pull/43)) kan je zien hoe ik getest heb en waar ik naar gekeken heb om dit te realiseren
+In de [pull request]([url](https://github.com/lisagjh/voorhoede/pull/43)](https://github.com/lisagjh/voorhoede/pull/43)) kan je zien hoe ik getest heb en waar ik naar gekeken heb om dit te realiseren
 
 livelink: https://user-needs-six.vercel.app/members
 
