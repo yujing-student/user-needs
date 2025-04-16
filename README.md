@@ -4,7 +4,7 @@ De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 
 # Creative spikes
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
-Scroll driven animations spike 1
+Scroll driven animations spike 1 livelink: https://user-needs-six.vercel.app/members
 
 View transitions api spike 2 livelink:https://user-needs-bhvnj6iuq-yu-jing-projects-0dab48b4.vercel.app/members
 
@@ -30,7 +30,7 @@ testspike livelink:https://user-needs-j1qjlhd6j-yu-jing-projects-0dab48b4.vercel
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar Github Pages 🌐-->
 
-Scroll driven animations spike 1
+Scroll driven animations spike 1 livelink https://user-needs-six.vercel.app/members
 
 View transitions api spike 2 livelink:https://user-needs-bhvnj6iuq-yu-jing-projects-0dab48b4.vercel.app/members
 
@@ -46,6 +46,7 @@ Mijn eerste spike is een scroll driven animation voor de cards met als thema con
 in mijn eerdere versies had ik dat ik de cards een andere kleur wilde geven alleen bleek uit de usertest dat dit toch niet zo handig is zie hier de link naar wat ik eerrst had bij `designkeuzes`:  https://github.com/lisagjh/voorhoede/pull/43
 In de pull request kan je zien hoe ik getest heb en waar ik naar gekeken heb om dit te realiseren
 
+livelink: https://user-needs-six.vercel.app/members
 
 <h2>Volledige animatie als video</h2>
 
@@ -153,6 +154,7 @@ met prefers reduced motion word aangegeven dat mensen die geen voorkeur hebben d
 Mijn 2de animatie heb ik met view transitions gemaakt waarin  ik een rotate gebruikt heb en `document.startviewTransitions` zodat als je op de knop `maak mij recht` klikt dat er een smooth overgang is
 de kaartjes draaien als je naar beneden scrolt en stoppen met draaien als je niet scrollt 
 
+livelink: livelink:https://user-needs-bhvnj6iuq-yu-jing-projects-0dab48b4.vercel.app/members
 
 <h2>video van de animaite</h2>
 
